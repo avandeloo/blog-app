@@ -5,17 +5,18 @@
 <% end %>
 
 <%= form_tag "/articles/#{@article.id}", method: :patch do %>
-
-  <div>
-    <%= label_tag :title %>:
-    <%= text_field_tag :title, @article.title %>
+  <div class="form">
+    <div>
+        <%= label_tag :title %>:
+        <%= text_field_tag :title, @article.title %>
+    </div>
+    
+    <div>
+      <%= label_tag :text %>:
+      <%= text_area_tag :text, @article.text, size: "25x10" %>
+    </div>
   </div>
-  
-  <div>
-    <%= label_tag :text %>:
-    <%= text_area_tag :text, @article.text, size: "25x10" %>
-  </div>
-
+  <br>
   <input type="submit" name="Submit" class = "submitBtn">
-
+  </br>
 <% end %>

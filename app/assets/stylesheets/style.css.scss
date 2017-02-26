@@ -1,0 +1,31 @@
+body {
+  background-image: image-url("congruent_outline.png");
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  color: black;
+}
+
+h1, h3, h4 {
+  background-color: white;
+}
+
+table, th, td {
+    border: 3px solid black;
+    margin: auto;
+    padding: 4px;
+
+}
+
+.form {
+  background-color: lightgray;
+  margin-right: 575px;
+
+}
+
+th {
+    text-align: center;
+    background-color: white;
+}
+
+td {
+  background-color: white;
+}

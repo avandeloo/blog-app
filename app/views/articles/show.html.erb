@@ -2,7 +2,12 @@
 
   <H1>Title: <%= @article.title %></H1>
    
-  <H3> Text: <%= @article.text %> </H3>
+  <H3>Text: <%= @article.text %> </H3>
+
+  <h3>Categories: </h3>
+  <% @article.categories.each do |category| %>
+        <h4><%= category.name %></h4>
+  <% end %> 
 
 <% end %>
 

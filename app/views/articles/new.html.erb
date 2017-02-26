@@ -5,7 +5,7 @@
 <% end %>
 
 <%= form_tag "/articles", method: :post do %>
-    <div>
+    <div class="form">
       <div>
         <%= label_tag :title %>:
         <%= text_field_tag :title, @article.title %>
@@ -17,10 +17,11 @@
       </div>
 
       <div>
-        <%= label_tag :category %>
+        <%= label_tag :category %>:
         <%= collection_select :category, :category_id, Category.all, :id, :name %>
       </div>
-
-    <p></p>
-  <input type="submit" name="Create New Article" class = "submitBtn">
+    </div>
+  <br>
+    <input type="submit" name="Create New Article" class = "submitBtn">
+  </br>
 <% end %>
