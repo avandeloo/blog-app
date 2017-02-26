@@ -1,0 +1,16 @@
+<% if current_user %> 
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+    </tr>
+   
+    <% @articles.each do |article| %>
+      <tr>
+        <td><a href="/articles/<%= article.id %>" class = link><%= article.title %></td>
+        <td><%= article.text %></td>
+      </tr>
+    <% end %>
+  </table>
+
+<% end %>

@@ -1,0 +1,26 @@
+<h1>Create New Article</h1>
+
+<% @article.errors.full_messages.each do |error| %>
+  <h4><%= error %></h4>
+<% end %>
+
+<%= form_tag "/articles", method: :post do %>
+    <div>
+      <div>
+        <%= label_tag :title %>:
+        <%= text_field_tag :title, @article.title %>
+      </div>
+      
+      <div>
+        <%= label_tag :text %>:
+        <%= text_area_tag :text, @article.text, size: "25x10" %>
+      </div>
+
+      <div>
+        <%= label_tag :category %>
+        <%= collection_select :category, :category_id, Category.all, :id, :name %>
+      </div>
+
+    <p></p>
+  <input type="submit" name="Create New Article" class = "submitBtn">
+<% end %>

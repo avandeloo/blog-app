@@ -1,0 +1,21 @@
+<h1>Update Article</h1>
+
+<% @article.errors.full_messages.each do |error| %>
+  <h4><%= error %></h4>
+<% end %>
+
+<%= form_tag "/articles/#{@article.id}", method: :patch do %>
+
+  <div>
+    <%= label_tag :title %>:
+    <%= text_field_tag :title, @article.title %>
+  </div>
+  
+  <div>
+    <%= label_tag :text %>:
+    <%= text_area_tag :text, @article.text, size: "25x10" %>
+  </div>
+
+  <input type="submit" name="Submit" class = "submitBtn">
+
+<% end %>

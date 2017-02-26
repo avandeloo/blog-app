@@ -1,0 +1,15 @@
+<% if current_user %> 
+  <table>
+    <tr>
+      <th>Categories</th>
+    </tr>
+   
+    <% @categories.each do |category| %>
+      <tr>
+        <td><a href="/categories/<%= category.id %>" class = link><%= category.name %></td>
+
+      </tr>
+    <% end %>
+  </table>
+
+<% end %>

@@ -1,0 +1,16 @@
+<h1>Update Category</h1>
+
+<% @category.errors.full_messages.each do |error| %>
+  <h4><%= error %></h4>
+<% end %>
+
+<%= form_tag "/categories/#{@category.id}", method: :patch do %>
+
+  <div>
+    <%= label_tag :name %>:
+    <%= text_field_tag :name, @category.name %>
+  </div>
+
+  <input type="submit" name="Submit" class = "submitBtn">
+
+<% end %>

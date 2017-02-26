@@ -1,0 +1,12 @@
+<% if current_user %> 
+
+  <H1> Name: <%= @category.name %></H1>
+
+<% end %>
+
+<% if current_user && current_user.id == @category.user_id %> 
+  <div class="btn-group" role="group" aria-label="...">
+    <%= link_to "Edit", "/categories/#{@category.id}/edit", class: "btn btn-primary" %>
+    <%= link_to "Remove", "/categories/#{@category.id}", class: "btn btn-danger", method: :delete %>
+  </div>
+<% end %>

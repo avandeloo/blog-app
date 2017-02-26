@@ -1,0 +1,14 @@
+<% if current_user %> 
+
+  <H1>Title: <%= @article.title %></H1>
+   
+  <H3> Text: <%= @article.text %> </H3>
+
+<% end %>
+
+<% if current_user && current_user.id == @article.user_id %> 
+  <div class="btn-group" role="group" aria-label="...">
+    <%= link_to "Edit", "/articles/#{@article.id}/edit", class: "btn btn-primary" %>
+    <%= link_to "Remove", "/articles/#{@article.id}", class: "btn btn-danger", method: :delete %>
+  </div>
+<% end %>

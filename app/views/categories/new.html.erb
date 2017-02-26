@@ -1,0 +1,16 @@
+<h1>Create New Category</h1>
+
+<% @category.errors.full_messages.each do |error| %>
+  <h4><%= error %></h4>
+<% end %>
+
+<%= form_tag "/categories", method: :post do %>
+    <div>
+      <div>
+        <%= label_tag :name %>:
+        <%= text_field_tag :name, @category.name %>
+      </div>
+
+    <p></p>
+  <input type="submit" name="Create New Category" class = "submitBtn">
+<% end %>
